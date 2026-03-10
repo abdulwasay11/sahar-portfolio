@@ -51,8 +51,11 @@ export function Footer() {
                 <Mail className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-sm text-white/60">
+            <p className="text-sm text-white/60 mb-2">
               Dera Ghazi Khan, Pakistan
+            </p>
+            <p className="text-sm text-white/60">
+              <a href="tel:+923317313883" className="hover:text-primary transition-colors">+92 331 7313883</a>
             </p>
           </div>
         </div>

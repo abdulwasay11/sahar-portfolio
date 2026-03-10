@@ -6,6 +6,8 @@ import { Award, Star } from "lucide-react";
 import certSDA from "@assets/WhatsApp_Image_2026-03-10_at_4.30.25_PM_(1)_1773155924176.jpeg";
 import certWomenPhysio from "@assets/WhatsApp_Image_2026-03-10_at_4.30.25_PM_1773155924177.jpeg";
 import certAllenora from "@assets/WhatsApp_Image_2026-03-10_at_4.30.35_PM_(1)_1773155924177.jpeg";
+import certPDF1 from "@assets/CamScanner_03-10-2026_12.54_1773156550344.pdf";
+import certPDF2 from "@assets/CamScanner_10-03-2026_12.48_1773156550344.pdf";
 
 // Import Letters of Appreciation
 import imgAppreciation1 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.23_PM_1773155924175.jpeg";
@@ -50,7 +52,9 @@ export default function Portfolio() {
             {[
               { src: certWomenPhysio, title: "Aesthetic Skin Care & Facial Techniques", subtitle: "Women Physiotherapy Hub" },
               { src: certSDA, title: "Certified Beautician - Grade A", subtitle: "Skill Development Association" },
-              { src: certAllenora, title: "Professional Makeup Training", subtitle: "Alle'nora Multan" }
+              { src: certAllenora, title: "Professional Makeup Training", subtitle: "Alle'nora Multan" },
+              { src: certPDF1, title: "Advanced Certification", subtitle: "Professional Training" },
+              { src: certPDF2, title: "Specialized Skills Certificate", subtitle: "Professional Development" }
             ].map((cert, index) => (
               <motion.div 
                 key={index}
