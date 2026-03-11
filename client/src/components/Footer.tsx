@@ -32,8 +32,8 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-white/60">
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio & About</Link></li>
-              <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#booking" className="hover:text-primary transition-colors">Book Appointment</a></li>
+              {/* <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
+              <li><a href="#booking" className="hover:text-primary transition-colors">Book Appointment</a></li> */}
             </ul>
           </div>
 
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} Sahar Saleem Beauty Studio. All rights reserved.</p>
+          <p>&copy; 2023 Sahar Saleem Beauty Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>

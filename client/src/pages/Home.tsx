@@ -107,13 +107,13 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="#booking" 
+                  href="/" 
                   className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   Book Consultation
                 </a>
                 <a 
-                  href="#portfolio" 
+                  href="/portfolio" 
                   className="px-8 py-4 rounded-full bg-transparent border border-border text-foreground font-medium hover:bg-secondary/50 transition-all duration-300"
                 >
                   View Gallery

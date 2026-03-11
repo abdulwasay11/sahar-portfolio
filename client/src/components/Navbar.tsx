@@ -105,7 +105,7 @@ export function Navbar() {
                 </Link>
               ))}
               <a 
-                href="#booking"
+                href="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 text-center rounded-xl bg-primary text-primary-foreground font-medium"
               >
