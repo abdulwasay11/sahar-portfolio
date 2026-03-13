@@ -3,6 +3,8 @@ import { Sparkles, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import portfolioPptxUrl from "@assets/SaharSaleem Portfolio.pptx?url";
+
 export function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,6 +72,14 @@ export function Navbar() {
             >
               Book Appointment
             </a>
+
+            <a
+              href={portfolioPptxUrl}
+              download
+              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors duration-300 shadow-lg shadow-black/5"
+            >
+              Download
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -110,6 +120,15 @@ export function Navbar() {
                 className="mt-4 px-6 py-3 text-center rounded-xl bg-primary text-primary-foreground font-medium"
               >
                 Book Appointment
+              </a>
+
+              <a
+                href={portfolioPptxUrl}
+                download
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-6 py-3 text-center rounded-xl bg-secondary text-foreground font-medium"
+              >
+                Download
               </a>
             </nav>
           </motion.div>
