@@ -12,11 +12,13 @@ import certi1 from "@assets/certi1.png";
 import certi2 from "@assets/certi2.png";
 import certi3 from "@assets/certi3.png";
 import certi4 from "@assets/certi4.png";
+import nab from "@assets/Nabeel.jpeg";
 
 // Import Letters of Appreciation
 import imgAppreciation1 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.23_PM_1773155924175.jpeg";
 import imgAppreciation2 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.24_PM_(1)_1773155924175.jpeg";
 import imgAppreciation3 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.24_PM_1773155924176.jpeg";
+import { title } from "process";
 
 export default function Portfolio() {
   const fadeIn = {
@@ -55,6 +57,7 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { src: certWomenPhysio, title: "Aesthetic Skin Care & Facial Techniques", subtitle: "Women Physiotherapy Hub" },
+              {src: nab, title: "Collaboration with Nabeels" , subtitle: "Nabeel Photographic Moments"},
               { src: certSDA, title: "Certified Beautician - Grade A", subtitle: "Skill Development Association" },
               { src: certAllenora, title: "Professional Makeup Training", subtitle: "Alle'nora Multan" },
               { src: certPDF1, title: "Advanced Certification", subtitle: "Professional Training" },
