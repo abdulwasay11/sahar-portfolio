@@ -3,12 +3,18 @@ import { Sparkles, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import portfolioPptxUrl from "@assets/SaharSaleem Portfolio.pptx?url";
+import portfolioPptxUrl from "@assets/SaharSaleem Portfolio Main.pptx?url";
+import resume from "@assets/Sahar Saleem.pdf?url";
+
 
 export function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [downloadOpen, setDownloadOpen] = useState(false);
+  const [mobileDownloadOpen, setMobileDownloadOpen] = useState(false);
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,13 +27,13 @@ export function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Portfolio & About", path: "/portfolio" },
+    { name: "Profile", path: "/profile" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "glass-effect py-3" : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "glass-effect py-3" : "bg-transparent py-5"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -52,9 +58,8 @@ export function Navbar() {
               <Link
                 key={link.path}
                 href={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary relative py-1 ${
-                  location === link.path ? "text-primary" : "text-foreground/80"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary relative py-1 ${location === link.path ? "text-primary" : "text-foreground/80"
+                  }`}
               >
                 {link.name}
                 {location === link.path && (
@@ -66,20 +71,49 @@ export function Navbar() {
                 )}
               </Link>
             ))}
-            <a 
+            <a
               href="#booking"
               className="px-6 py-2.5 rounded-full bg-foreground text-background font-medium text-sm hover:bg-primary transition-colors duration-300 shadow-lg shadow-black/5"
             >
               Book Appointment
             </a>
 
-            <a
-              href={portfolioPptxUrl}
-              download
-              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors duration-300 shadow-lg shadow-black/5"
-            >
-              Download
-            </a>
+            <div className="relative">
+              <button
+                onClick={() => setDownloadOpen(!downloadOpen)}
+                className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors duration-300 shadow-lg shadow-black/5"
+              >
+                Download
+              </button>
+
+              <AnimatePresence>
+                {downloadOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute right-0 mt-2 w-40 bg-white border border-border rounded-xl shadow-lg overflow-hidden"
+                  >
+                    <a
+                      href={resume}
+                      download
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                    >
+                      Download CV
+                    </a>
+
+                    <a
+                      href={portfolioPptxUrl}
+                      download
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                    >
+                      Download Portfolio
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -107,14 +141,13 @@ export function Navbar() {
                   key={link.path}
                   href={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg font-display ${
-                    location === link.path ? "text-primary font-bold" : "text-foreground"
-                  }`}
+                  className={`text-lg font-display ${location === link.path ? "text-primary font-bold" : "text-foreground"
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <a 
+              <a
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 text-center rounded-xl bg-primary text-primary-foreground font-medium"
@@ -122,14 +155,45 @@ export function Navbar() {
                 Book Appointment
               </a>
 
-              <a
-                href={portfolioPptxUrl}
-                download
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-6 py-3 text-center rounded-xl bg-secondary text-foreground font-medium"
-              >
-                Download
-              </a>
+           <div className="flex flex-col">
+  <button
+    onClick={() => setMobileDownloadOpen(!mobileDownloadOpen)}
+    className="px-6 py-3 text-center rounded-xl bg-secondary text-foreground font-medium"
+  >
+    Download
+  </button>
+
+  <AnimatePresence>
+    {mobileDownloadOpen && (
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: "auto" }}
+        exit={{ opacity: 0, height: 0 }}
+        className="flex flex-col mt-2 rounded-lg border border-border overflow-hidden"
+      >
+        <a
+          href={resume}
+          download
+          onClick={() => setMobileMenuOpen(false)}
+          className="px-6 py-3 text-center text-sm hover:bg-muted"
+        >
+          Download CV
+        </a>
+
+        <a
+          href={portfolioPptxUrl}
+          download
+          onClick={() => setMobileMenuOpen(false)}
+          className="px-6 py-3 text-center text-sm hover:bg-muted"
+        >
+          Download Portfolio
+        </a>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
+
             </nav>
           </motion.div>
         )}

@@ -12,13 +12,20 @@ import certi1 from "@assets/certi1.png";
 import certi2 from "@assets/certi2.png";
 import certi3 from "@assets/certi3.png";
 import certi4 from "@assets/certi4.png";
+import certi5 from "@assets/certi5.jpeg";
+import certi6 from "@assets/certi6.jpeg";
+import certi7 from "@assets/certi7.png";
 import nab from "@assets/Nabeel.jpeg";
 
 // Import Letters of Appreciation
 import imgAppreciation1 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.23_PM_1773155924175.jpeg";
 import imgAppreciation2 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.24_PM_(1)_1773155924175.jpeg";
 import imgAppreciation3 from "@assets/WhatsApp_Image_2026-03-10_at_4.30.24_PM_1773155924176.jpeg";
-import { title } from "process";
+import imgAppreciation4 from "@assets/Ielts.jpeg";
+
+import portfolioImage1 from "@assets/Image1.jpeg";
+import portfolioImage2 from "@assets/Image2.jpeg";
+import portfolioImage3 from "@assets/Image3.jpeg";
 
 export default function Portfolio() {
   const fadeIn = {
@@ -65,7 +72,10 @@ export default function Portfolio() {
               { src: certi1, title: "Specialized Skills Certificate", subtitle: "Professional Development" },
               { src: certi2, title: "Specialized Skills Certificate", subtitle: "Professional Development" },
               { src: certi3, title: "Specialized Skills Certificate", subtitle: "Professional Development" },
-              { src: certi4, title: "Specialized Skills Certificate", subtitle: "Professional Development" }
+              { src: certi4, title: "Specialized Skills Certificate", subtitle: "Professional Development" },
+              { src: certi5, title: "Specialized Skills Certificate", subtitle: "Professional Development" },
+              { src: certi6, title: "Specialized Skills Certificate", subtitle: "Professional Development" },
+              { src: certi7, title: "Specialized Skills Certificate", subtitle: "Professional Development" }
             ].map((cert, index) => (
               <motion.div 
                 key={index}
@@ -90,6 +100,44 @@ export default function Portfolio() {
         </div>
       </section>
 
+      <section className="py-20 bg-secondary/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">Gallery</h2>
+            <div className="w-16 h-1 bg-primary mx-auto mb-6 rounded-full" />
+            <p className="text-muted-foreground">
+              A glimpse of my work and collaborations.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-10">
+            {[portfolioImage1, portfolioImage2, portfolioImage3].map((img, index) => (
+              <motion.div
+                key={index}
+                className="relative group rounded-2xl overflow-hidden shadow-xl border border-border/50 bg-white"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+              >
+                <img
+                  src={img}
+                  alt={`Portfolio image ${index + 1}`}
+                  className="w-full aspect-[3/4] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* LETTERS OF APPRECIATION */}
       <section className="py-20 bg-foreground text-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +153,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-10">
-            {[imgAppreciation1, imgAppreciation2, imgAppreciation3].map((img, index) => (
+            {[imgAppreciation4 ,imgAppreciation1, imgAppreciation2, imgAppreciation3 ].map((img, index) => (
               <motion.div
                 key={index}
                 className="relative group rounded-xl overflow-hidden shadow-2xl bg-white/5 p-3"
